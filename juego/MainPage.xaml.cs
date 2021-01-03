@@ -26,6 +26,7 @@ namespace juego
     public sealed partial class MainPage : Page
     {
         DispatcherTimer myTimer;
+        DateTime startTime;
         public MainPage()
         {
             this.InitializeComponent();
@@ -36,10 +37,16 @@ namespace juego
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
-            myTimer.Start();            
+            myTimer.Start();
+            startTime = DateTime.UtcNow;
         }
 
         private void dispatcherTimer_Tick(object sender, object e) {
+            // si el evento ha durado mas de 1 min llamar a myTimer.Stop()
+            // si han pasado x segundos llamar al metodo que pinta el circulo con el codigo de abajo
+            // generar de formar random entre colores rojo y azul
+
+            // esto pinta el circulo
             SolidColorBrush brush = new SolidColorBrush(Windows.UI.Colors.Red);
             Ellipse newEllipse = new Ellipse()
             {
@@ -49,6 +56,8 @@ namespace juego
                 Height = 10,
                 Width = 10
             };
+            /* Definir metodo para manejar el evento de single tap y añadir despues del =
+            newEllipse.Tapped = */
             this.canvas.Children.Add(newEllipse);
         }
         private void canvas_LayoutUpdated(object sender, object e)
