@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="juego.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:juego"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button x:ConnectionId='2' x:Name="start" Content="Empezar" Margin="41,55,0,0" VerticalAlignment="Top"                    />
+        <Canvas x:ConnectionId='3' x:Name="canvas" Background="AliceBlue" Margin="41,160,959,540" Height="300" Width="500"                                     />
+
+    </Grid>
+</Page>
+
