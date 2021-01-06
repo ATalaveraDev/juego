@@ -9,8 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="start" Content="Empezar" Margin="41,55,0,0" VerticalAlignment="Top" Click="start_Click"/>
-        <Canvas x:Name="canvas" Background="AliceBlue" Margin="41,160,959,540" Height="300" Width="500" LayoutUpdated="canvas_LayoutUpdated"/>
+        <Canvas x:Name="canvas" Background="AliceBlue" Margin="10,10,10,10" LayoutUpdated="canvas_LayoutUpdated"/>
 
     </Grid>
 </Page>

@@ -25,44 +25,67 @@ namespace juego
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Ellipse newEllipse;
+        Random rnd = new Random();
         DispatcherTimer myTimer;
         DateTime startTime;
+        List<Ellipse> objetos = new List<Ellipse>();
         public MainPage()
         {
             this.InitializeComponent();
             myTimer = new DispatcherTimer();
-            myTimer.Interval = TimeSpan.FromSeconds(1);
+            myTimer.Interval = TimeSpan.FromSeconds(2);
             myTimer.Tick += dispatcherTimer_Tick;
-        }
-
-        private void start_Click(object sender, RoutedEventArgs e)
-        {
             myTimer.Start();
             startTime = DateTime.UtcNow;
         }
 
         private void dispatcherTimer_Tick(object sender, object e) {
-            // si el evento ha durado mas de 1 min llamar a myTimer.Stop()
+            
             // si han pasado x segundos llamar al metodo que pinta el circulo con el codigo de abajo
-            // generar de formar random entre colores rojo y azul
+            myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(1,5));
+            
+            // si el evento ha durado mas de 1 min llamar a myTimer.Stop() ESTO NO FUNCIONA
+            if (DateTime.UtcNow.Subtract(startTime).TotalSeconds == 60)
+                myTimer.Stop();
 
-            // esto pinta el circulo
-            SolidColorBrush brush = new SolidColorBrush(Windows.UI.Colors.Red);
+            // generar de formar random entre colores rojo y azul
+            if (rnd.Next()%2==0)
+                newEllipse = pintarCirculo(Windows.UI.Colors.Red, 100,100);
+            else
+                newEllipse = pintarCirculo(Windows.UI.Colors.BlueViolet, 100, 100);
+
+            this.canvas.Children.Add(newEllipse);
+            
+            //esto hace que la posición sea aleatoria.
+            Canvas.SetTop(newEllipse, rnd.Next(10, 800));
+            Canvas.SetLeft(newEllipse, rnd.Next(10, 800));
+
+        }
+        private void canvas_LayoutUpdated(object sender, object e)
+        {
+            
+        }
+
+        private Ellipse pintarCirculo(Windows.UI.Color color, int hei, int wid)
+        {
+            SolidColorBrush brush = new SolidColorBrush(color);
             Ellipse newEllipse = new Ellipse()
             {
                 Stroke = brush,
                 Fill = brush,
                 StrokeThickness = 5,
-                Height = 10,
-                Width = 10
+                Height = hei,
+                Width = wid
             };
-            /* Definir metodo para manejar el evento de single tap y añadir despues del =
-            newEllipse.Tapped = */
-            this.canvas.Children.Add(newEllipse);
+            newEllipse.Tapped += circle_Tapped;
+            return newEllipse;
         }
-        private void canvas_LayoutUpdated(object sender, object e)
+
+        private void circle_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            
+            this.canvas.Children.Remove((Ellipse)sender);
+           
         }
     }
 }
