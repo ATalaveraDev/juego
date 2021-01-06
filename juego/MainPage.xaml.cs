@@ -37,16 +37,17 @@ namespace juego
             myTimer.Interval = TimeSpan.FromSeconds(2);
             myTimer.Tick += dispatcherTimer_Tick;
             myTimer.Start();
-            startTime = DateTime.UtcNow;
+            startTime = DateTime.Now;
         }
 
         private void dispatcherTimer_Tick(object sender, object e) {
             
             // si han pasado x segundos llamar al metodo que pinta el circulo con el codigo de abajo
             myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(1,5));
-            
+
             // si el evento ha durado mas de 1 min llamar a myTimer.Stop() ESTO NO FUNCIONA
-            if (DateTime.UtcNow.Subtract(startTime).TotalSeconds == 60)
+            int elapsed = (DateTime.Now - startTime).Seconds;
+            if (elapsed == 59)
                 myTimer.Stop();
 
             // generar de formar random entre colores rojo y azul
