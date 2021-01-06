@@ -8,10 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Canvas x:Name="canvas" Background="AliceBlue" Margin="10,152,10,10" LayoutUpdated="canvas_LayoutUpdated"/>
-        <TextBox x:Name="Azul" HorizontalAlignment="Left" Margin="195,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="131" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="Rojo" HorizontalAlignment="Left" Margin="1135,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="131" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold"/>
 
+    <Grid AutomationProperties.PositionInSet="1">
+        <TextBox x:Name="Rojo" HorizontalAlignment="Left" Margin="903,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#FFFF2020" Background="#66F78C8C" FocusVisualPrimaryBrush="#FFFF2020" FocusVisualSecondaryBrush="#66F78C8C" SelectionHighlightColorWhenNotFocused="#66F78C8C" SelectionHighlightColor="#66F78C8C" />
+        <TextBox x:Name="Azul" HorizontalAlignment="Left" Margin="249,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#FF1872F3" Background="#666BE1FB"  FocusVisualPrimaryBrush="#FF1872F3" FocusVisualSecondaryBrush="#666BE1FB" SelectionHighlightColorWhenNotFocused="#666BE1FB" SelectionHighlightColor="#666BE1FB"/>
+        <Canvas x:Name="canvas" Background="AliceBlue" Margin="10,114,10,10" />
     </Grid>
 </Page>
