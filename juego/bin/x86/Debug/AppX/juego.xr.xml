@@ -25,6 +25,8 @@
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="FontWeight" />
     </RootType>
     <RootType FullName="juego.MainPage" />
   </Roots.RootTypes>

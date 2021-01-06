@@ -45,7 +45,7 @@ namespace juego
         private void dispatcherTimer_Tick(object sender, object e) {
             
             // si han pasado x segundos llamar al metodo que pinta el circulo con el codigo de abajo
-            myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(1,3));
+            myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(2,4));
 
             // si el evento ha durado mas de 1 min llamar a myTimer.Stop() ESTO NO FUNCIONA
             int elapsed = (DateTime.Now - startTime).Seconds;
@@ -67,20 +67,34 @@ namespace juego
         private void agregarRojo(int nivel)
         {
             newEllipse = pintarCirculo(Windows.UI.Colors.Red, 100/nivel, 100/nivel);
-            newEllipse.Tag = "R";
+            if(nivel == 2)
+            {
+                newEllipse.Tag = "RR";
+            } else
+            {
+                newEllipse.Tag = "R";
+            }
+            
             this.canvas.Children.Add(newEllipse);
-            Canvas.SetTop(newEllipse, rnd.Next(10, 500));
-            Canvas.SetLeft(newEllipse, rnd.Next(500, 900));
+            Canvas.SetTop(newEllipse, rnd.Next(10, 450));
+            Canvas.SetLeft(newEllipse, rnd.Next(500, 1200));
 
         }
 
         private void agregarAzul(int nivel)
         {
             newEllipse = pintarCirculo(Windows.UI.Colors.BlueViolet, 100 / nivel, 100 / nivel);
-            newEllipse.Tag = "A";
+            if (nivel == 2)
+            {
+                newEllipse.Tag = "AA";
+            }
+            else
+            {
+                newEllipse.Tag = "A";
+            }
             this.canvas.Children.Add(newEllipse);
-            Canvas.SetTop(newEllipse, rnd.Next(10, 500));
-            Canvas.SetLeft(newEllipse, rnd.Next(10, 450));
+            Canvas.SetTop(newEllipse, rnd.Next(10, 450));
+            Canvas.SetLeft(newEllipse, rnd.Next(10, 600));
         }
 
 
@@ -106,17 +120,32 @@ namespace juego
 
         private void circle_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Ellipse newEllipse = (Ellipse)sender;
-            this.canvas.Children.Remove(newEllipse);
-            if (newEllipse.Tag.Equals("R")){
-                this.Rojo.Text = ++contR + "";
-            }
-            else
+            Ellipse tempE = (Ellipse)sender;
+            this.canvas.Children.Remove(tempE);
+            String temp = (String)tempE.Tag;
+
+            switch (temp)
             {
-                this.Azul.Text = ++contA + "";
+                case "A":
+                    agregarAzul(2);
+                    agregarAzul(2);
+                    break;
+                case "AA":
+                    this.Azul.Text = ++contA + "";
+                    break;
+                case "R":
+                    agregarRojo(2);
+                    agregarRojo(2);
+                    break;
+                case "RR":
+                    this.Rojo.Text = ++contR + "";
+                    break;
+            }
+
+
+                
 
             }
         }
-    }
     
 }
