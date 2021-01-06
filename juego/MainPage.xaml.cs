@@ -29,7 +29,7 @@ namespace juego
         Random rnd = new Random();
         DispatcherTimer myTimer;
         DateTime startTime;
-        List<Ellipse> objetos = new List<Ellipse>();
+        int contR = 0, contA = 0;
         public MainPage()
         {
             this.InitializeComponent();
@@ -38,12 +38,14 @@ namespace juego
             myTimer.Tick += dispatcherTimer_Tick;
             myTimer.Start();
             startTime = DateTime.Now;
+            this.Azul.Text = "0";
+            this.Rojo.Text = "0";
         }
 
         private void dispatcherTimer_Tick(object sender, object e) {
             
             // si han pasado x segundos llamar al metodo que pinta el circulo con el codigo de abajo
-            myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(1,5));
+            myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(1,3));
 
             // si el evento ha durado mas de 1 min llamar a myTimer.Stop() ESTO NO FUNCIONA
             int elapsed = (DateTime.Now - startTime).Seconds;
@@ -51,18 +53,37 @@ namespace juego
                 myTimer.Stop();
 
             // generar de formar random entre colores rojo y azul
-            if (rnd.Next()%2==0)
-                newEllipse = pintarCirculo(Windows.UI.Colors.Red, 100,100);
+            if (rnd.Next() % 2 == 0)
+            {
+                agregarRojo(1);
+            }
             else
-                newEllipse = pintarCirculo(Windows.UI.Colors.BlueViolet, 100, 100);
+            {
+                agregarAzul(1);
+            }
+        
+        }
 
+        private void agregarRojo(int nivel)
+        {
+            newEllipse = pintarCirculo(Windows.UI.Colors.Red, 100/nivel, 100/nivel);
+            newEllipse.Tag = "R";
             this.canvas.Children.Add(newEllipse);
-            
-            //esto hace que la posición sea aleatoria.
-            Canvas.SetTop(newEllipse, rnd.Next(10, 800));
-            Canvas.SetLeft(newEllipse, rnd.Next(10, 800));
+            Canvas.SetTop(newEllipse, rnd.Next(10, 500));
+            Canvas.SetLeft(newEllipse, rnd.Next(500, 900));
 
         }
+
+        private void agregarAzul(int nivel)
+        {
+            newEllipse = pintarCirculo(Windows.UI.Colors.BlueViolet, 100 / nivel, 100 / nivel);
+            newEllipse.Tag = "A";
+            this.canvas.Children.Add(newEllipse);
+            Canvas.SetTop(newEllipse, rnd.Next(10, 500));
+            Canvas.SetLeft(newEllipse, rnd.Next(10, 450));
+        }
+
+
         private void canvas_LayoutUpdated(object sender, object e)
         {
             
@@ -85,8 +106,17 @@ namespace juego
 
         private void circle_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.canvas.Children.Remove((Ellipse)sender);
-           
+            Ellipse newEllipse = (Ellipse)sender;
+            this.canvas.Children.Remove(newEllipse);
+            if (newEllipse.Tag.Equals("R")){
+                this.Rojo.Text = ++contR + "";
+            }
+            else
+            {
+                this.Azul.Text = ++contA + "";
+
+            }
         }
     }
+    
 }

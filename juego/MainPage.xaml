@@ -9,7 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Canvas x:Name="canvas" Background="AliceBlue" Margin="10,10,10,10" LayoutUpdated="canvas_LayoutUpdated"/>
+        <Canvas x:Name="canvas" Background="AliceBlue" Margin="10,152,10,10" LayoutUpdated="canvas_LayoutUpdated"/>
+        <TextBox x:Name="Azul" HorizontalAlignment="Left" Margin="195,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="131" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold"/>
+        <TextBox x:Name="Rojo" HorizontalAlignment="Left" Margin="1135,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="137" Width="131" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold"/>
 
     </Grid>
 </Page>
