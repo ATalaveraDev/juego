@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>PCDRAMOS</Machine>
-    <WindowsUser>dramos</WindowsUser>
+    <Machine>LAPTOP-J76K5DFM</Machine>
+    <WindowsUser>Familia</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>b86fca80-c281-4b46-a2c0-1254ef4ec39c</PackageIdentityName>
     <PackageIdentityPublisher>CN=Familia</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\dramos\source\repos\juego\juego\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Familia\source\repos\juego\juego\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>BE3F6B08AAEEA8E5C6AE461F0906A1A98CF7C0FA804B2DD62C30E69548B98AC7</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>796B32B088BA1A4376DFA1E881558671D3A2B7538487F9D5DBB086D468B94066</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>b86fca80-c281-4b46-a2c0-1254ef4ec39c_1.0.0.0_x86__y65ca2bhy5d3m</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>b86fca80-c281-4b46-a2c0-1254ef4ec39c_y65ca2bhy5d3m!App</RegisteredUserModeAppID>
     <RegisteredPackageID>b86fca80-c281-4b46-a2c0-1254ef4ec39c</RegisteredPackageID>
@@ -27,22 +27,22 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-06T19:48:21.263</Modified>
+      <Modified>2021-01-07T18:02:24.625</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\juego.exe">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\juego.exe">
       <PackagePath>entrypoint\juego.exe</PackagePath>
-      <Modified>2021-01-06T19:48:20.797</Modified>
+      <Modified>2021-01-07T18:02:23.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
       <Modified>2020-02-27T18:16:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\.nuget\packages\system.drawing.common\5.0.0\lib\netstandard2.0\System.Drawing.Common.dll">
+    <AppxPackagedFile Include="C:\Users\Familia\.nuget\packages\system.drawing.common\5.0.0\lib\netstandard2.0\System.Drawing.Common.dll">
       <PackagePath>System.Drawing.Common.dll</PackagePath>
       <Modified>2018-09-18T17:38:14.000</Modified>
     </AppxPackagedFile>
@@ -50,67 +50,67 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2019-03-18T17:36:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2021-01-03T20:48:16.386</Modified>
+      <Modified>2021-01-03T15:42:48.699</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2021-01-03T20:48:16.379</Modified>
+      <Modified>2020-12-22T17:16:36.071</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-03T20:48:16.380</Modified>
+      <Modified>2020-12-22T17:16:36.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-03T20:48:16.381</Modified>
+      <Modified>2020-12-22T17:16:36.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-03T20:48:16.381</Modified>
+      <Modified>2020-12-22T17:16:36.087</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-03T20:48:16.382</Modified>
+      <Modified>2020-12-22T17:16:36.103</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-03T20:48:16.383</Modified>
+      <Modified>2020-12-22T17:16:36.103</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-01-03T20:48:16.383</Modified>
+      <Modified>2020-12-22T17:16:36.103</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\juego.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\juego.xr.xml">
       <PackagePath>juego.xr.xml</PackagePath>
-      <Modified>2021-01-06T19:42:41.807</Modified>
+      <Modified>2021-01-07T18:02:23.263</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-01-06T19:48:20.705</Modified>
+      <Modified>2021-01-07T17:52:30.079</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-01-06T19:48:20.706</Modified>
+      <Modified>2021-01-07T18:02:23.331</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2019-03-18T16:33:42.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-01-06T10:23:44.283</Modified>
+      <Modified>2021-01-07T17:01:11.059</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\dramos\source\repos\juego\juego\bin\x86\Debug\Core\juego.exe">
+    <AppxPackagedFile Include="C:\Users\Familia\source\repos\juego\juego\bin\x86\Debug\Core\juego.exe">
       <PackagePath>juego.exe</PackagePath>
-      <Modified>2021-01-06T19:48:21.258</Modified>
+      <Modified>2021-01-07T18:02:24.614</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

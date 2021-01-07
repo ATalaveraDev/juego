@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CQ7YOtqtHAYiP/ZxT7M6Lfwit4oetIS/lp+DWKi/c/ZPbj4GthX4z8l2LG3nN4YGKZ4CBi+7JAiLdnm565TjJw==",
+  "dgSpecHash": "WYa88GKHQUl+IuHyMlu429kmRi7+9GnLucuVDUV52xZYlx9qX5uq6eNGXwlCoZNnHG8lAmHLnFyv0qQqpduV3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dramos\\source\\repos\\juego\\juego\\juego.csproj",
+  "projectFilePath": "C:\\Users\\Familia\\source\\repos\\juego\\juego\\juego.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.8-rel-28605-00\\microsoft.net.native.compiler.2.2.8-rel-28605-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.10\\microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
@@ -27,7 +27,7 @@
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.native.sharedlibrary\\2.2.7-rel-28605-00\\runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.7-rel-28605-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.10\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.10.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.2.10\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.10.nupkg.sha512",
-    "C:\\Users\\dramos\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+    "C:\\Users\\Familia\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

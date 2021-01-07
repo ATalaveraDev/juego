@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Controls;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
@@ -26,48 +15,31 @@ namespace juego
     public sealed partial class MainPage : Page
     {
         Ellipse newEllipse;
-        Random rnd = new Random();
         DispatcherTimer myTimer;
         DateTime startTime;
         int contR = 0, contA = 0, totR=0, totA=0;
+        Random rnd = new Random();
         public MainPage()
         {
             this.InitializeComponent();
             myTimer = new DispatcherTimer();
             myTimer.Interval = TimeSpan.FromSeconds(1);
             myTimer.Tick += dispatcherTimer_Tick;
-            myTimer.Start();
-            startTime = DateTime.Now;
+            
             this.Azul.Text = "0 / 0";
             this.Rojo.Text = "0 / 0";
         }
 
         private void dispatcherTimer_Tick(object sender, object e) {
-            
-            // si han pasado x segundos llamar al metodo que pinta el circulo con el codigo de abajo
-            myTimer.Interval = TimeSpan.FromSeconds(rnd.Next(3,6));
+            /* Generador de dificultad. La dificultad se establece segun una probabilidad
+             que se define segun la relacion entre velocidad del usuario versus velocidad
+             del tick. Por tanto a mayor aumento del indice de probabilidad de crear una bola
+            mayor dificultad */
+            Random gen = new Random();
+            int probability = gen.Next(100);
 
-            // si el evento ha durado mas de 1 min llamar a myTimer.Stop() 
-            int elapsed = (DateTime.Now - startTime).Seconds;  //NO FUNCIONA BIEN
-            if (elapsed == 59) {
-                myTimer.Stop();
-                this.canvas.Children.Clear();
-                
-                int azul = totA - contA;
-                int rojo = totR - contR;
-
-                if(azul < rojo) //gana el que tiene menos diferencia
-                {
-                    this.Rojo.IsEnabled = false;
-                }
-                else
-                {
-                    this.Azul.IsEnabled = false;
-                }
-                return;
-            }
-            // generar de formar random entre colores rojo y azul
-            if (rnd.Next() % 2 == 0)
+            if (probability < 50) {
+                if (rnd.Next() % 2 == 0)
                 {
                     agregarRojo(1);
                 }
@@ -75,6 +47,32 @@ namespace juego
                 {
                     agregarAzul(1);
                 }
+            }
+
+            int elapsed = (DateTime.Now - startTime).Seconds;  
+            if (elapsed == 59)
+            {
+                myTimer.Stop();
+                this.canvas.Children.Clear();
+
+                int azul = totA - contA;
+                int rojo = totR - contR;
+
+                if (totA < totR) //gana el que tiene menos diferencia
+                {
+                    this.Rojo.Background = (SolidColorBrush)Resources["Green"];
+                    this.Rojo.Text = "WIN";
+                }
+                else
+                {
+                    this.Azul.Background = (SolidColorBrush)Resources["Green"];
+                    this.Azul.Text = "WIN";
+                }
+
+                this.starter.Visibility = Visibility.Visible;
+
+                return;
+            }
         }
 
         private void agregarRojo(int nivel)
@@ -89,10 +87,9 @@ namespace juego
             }
             
             this.canvas.Children.Add(newEllipse);
-            Canvas.SetTop(newEllipse, rnd.Next(10, 450));
-            Canvas.SetLeft(newEllipse, rnd.Next(300, 1200));
+            Canvas.SetTop(newEllipse, rnd.Next(110, 550));
+            Canvas.SetLeft(newEllipse, rnd.Next(400, 1300));
             this.Rojo.Text = contR + " / " + ++totR;
-
         }
 
         
@@ -113,8 +110,6 @@ namespace juego
             this.Azul.Text = contA + " / " + ++totA;
         }
 
-        
-
         private Ellipse pintarCirculo(Windows.UI.Color color, int hei, int wid)
         {
             SolidColorBrush brush2 = new SolidColorBrush(Windows.UI.Colors.Black);
@@ -129,6 +124,7 @@ namespace juego
             };
             newEllipse.Tapped += circle_Tapped;
             newEllipse.Holding += circle_Holding;
+
             return newEllipse;
         }
 
@@ -190,6 +186,16 @@ namespace juego
             }
         }
 
+        private void starter_Click(object sender, RoutedEventArgs e)
+        {
+            this.Azul.Text = "0 / 0";
+            this.Azul.Background = (SolidColorBrush)Resources["AzulBackground"];
+            this.Rojo.Text = "0 / 0";
+            this.Rojo.Background = (SolidColorBrush)Resources["RojoBackground"];
+            myTimer.Start();
+            startTime = DateTime.Now;
+            this.starter.Visibility = Visibility.Collapsed;
+        }
     }
 
 }

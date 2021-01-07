@@ -7,11 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <SolidColorBrush x:Key="Green" Color="#00FF00"></SolidColorBrush>
+        <SolidColorBrush x:Key="AzulBackground" Color="#6BE1FB"></SolidColorBrush>
+        <SolidColorBrush x:Key="RojoBackground" Color="#F78C8C"></SolidColorBrush>
+    </Page.Resources>
 
 
     <Grid AutomationProperties.PositionInSet="1">
-        <TextBox x:Name="Rojo" HorizontalAlignment="Left" Margin="903,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#FFFF2020" Background="#66F78C8C" FocusVisualPrimaryBrush="#FFFF2020" FocusVisualSecondaryBrush="#66F78C8C" SelectionHighlightColorWhenNotFocused="#66F78C8C" SelectionHighlightColor="#66F78C8C" />
-        <TextBox x:Name="Azul" HorizontalAlignment="Left" Margin="249,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#FF1872F3" Background="#666BE1FB"  FocusVisualPrimaryBrush="#FF1872F3" FocusVisualSecondaryBrush="#666BE1FB" SelectionHighlightColorWhenNotFocused="#666BE1FB" SelectionHighlightColor="#666BE1FB"/>
+        <TextBox x:Name="Azul" HorizontalAlignment="Left" Margin="249,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#1872F3" Background="#6BE1FB"/>
+        <TextBox x:Name="Rojo" HorizontalAlignment="Left" Margin="903,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#FF2020" Background="#F78C8C"/>
         <Canvas x:Name="canvas" Background="AliceBlue" Margin="10,114,10,10" />
+        <Button x:Name="starter" Content="START" Margin="609,16,0,0" VerticalAlignment="Top" Height="92" Width="246" FontSize="48" Click="starter_Click"/>
     </Grid>
 </Page>
