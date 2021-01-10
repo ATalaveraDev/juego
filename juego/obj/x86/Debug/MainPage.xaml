@@ -9,16 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <SolidColorBrush x:Key="Green" Color="#00FF00"></SolidColorBrush>
-        <SolidColorBrush x:Key="AzulBackground" Color="#6BE1FB"></SolidColorBrush>
-        <SolidColorBrush x:Key="RojoBackground" Color="#F78C8C"></SolidColorBrush>
     </Page.Resources>
 
 
     <Grid AutomationProperties.PositionInSet="1">
-        <TextBox x:ConnectionId='2' x:Name="Azul" HorizontalAlignment="Left" Margin="249,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#1872F3" Background="#6BE1FB"/>
-        <TextBox x:ConnectionId='3' x:Name="Rojo" HorizontalAlignment="Left" Margin="903,10,0,0" Text="50" TextWrapping="Wrap" VerticalAlignment="Top" Height="99" Width="300" FontSize="72" IsReadOnly="True" TextAlignment="Center" FontWeight="Bold" Foreground="#FF2020" Background="#F78C8C"/>
-        <Canvas x:ConnectionId='4' x:Name="canvas" Background="AliceBlue" Margin="10,114,10,10" />
-        <Button x:ConnectionId='5' x:Name="starter" Content="START" Margin="609,16,0,0" VerticalAlignment="Top" Height="92" Width="246" FontSize="48"                      />
+        <Canvas x:ConnectionId='2' x:Name="canvas" Background="AliceBlue" Margin="10,114,10,10" />
+        <Button x:ConnectionId='3' x:Name="starter" Content="START" Margin="609,16,0,0" VerticalAlignment="Top" Height="92" Width="246" FontSize="48"                      />
+        <TextBlock x:ConnectionId='4' x:Name="Azul" HorizontalAlignment="Left" Margin="70,-12,0,0" Text="J1: 100%" FontSize="65" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF041BFB" Width="252"/>
+        <TextBlock x:ConnectionId='5' x:Name="Azul2" HorizontalAlignment="Left" Margin="118,62,0,0" Text="(60/60)" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF041BFB"/>
+        <TextBlock x:ConnectionId='6' x:Name="Rojo" HorizontalAlignment="Left" Margin="1023,-12,0,0" Text="J2: 100%" FontSize="65" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF00C0C" Width="254"/>
+        <TextBlock x:ConnectionId='7' x:Name="Rojo2" HorizontalAlignment="Left" Margin="1071,65,0,0" Text="(0/0)" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF00C0C" FontWeight="Normal"/>
+
+
     </Grid>
 </Page>
 

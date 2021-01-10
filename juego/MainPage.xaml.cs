@@ -17,7 +17,9 @@ namespace juego
         Ellipse newEllipse;
         DispatcherTimer myTimer;
         DateTime startTime;
-        int contR = 0, contA = 0, totR=0, totA=0;
+        int contR, contA, totA, totR, porA, porR;
+        
+        
         Random rnd = new Random();
         public MainPage()
         {
@@ -26,8 +28,10 @@ namespace juego
             myTimer.Interval = TimeSpan.FromSeconds(1);
             myTimer.Tick += dispatcherTimer_Tick;
             
-            this.Azul.Text = "0 / 0";
-            this.Rojo.Text = "0 / 0";
+            this.Azul.Text = "J1: 0%";
+            this.Azul2.Text = "(0/0)";
+            this.Rojo.Text = "J2: 0%";
+            this.Rojo2.Text = "(0/0)";
         }
 
         private void dispatcherTimer_Tick(object sender, object e) {
@@ -54,25 +58,53 @@ namespace juego
             {
                 myTimer.Stop();
                 this.canvas.Children.Clear();
+                String res;
+                calcularPorcentajes();
 
-                int azul = totA - contA;
-                int rojo = totR - contR;
-
-                if (totA < totR) //gana el que tiene menos diferencia
+                if (porA == porR) // empate
                 {
-                    this.Rojo.Background = (SolidColorBrush)Resources["Green"];
-                    this.Rojo.Text = "WIN";
+                    res = "No ha habido ganador";
+                }
+                else if (porA < porR) //gana el que tiene el porcentaje más alto
+                {
+                    res = "¡Ha ganado el jugador J2!";
                 }
                 else
                 {
-                    this.Azul.Background = (SolidColorBrush)Resources["Green"];
-                    this.Azul.Text = "WIN";
+                    res = "¡Ha ganado el jugador J1!";
                 }
 
+                TextBlock resultado = new TextBlock();
+                resultado.Text = res;
+                resultado.FontSize = 72;
+                resultado.Width = 800;
+
+                this.canvas.Children.Add(resultado);
+                Canvas.SetLeft(resultado, 350);
+                Canvas.SetTop(resultado, 386);
                 this.starter.Visibility = Visibility.Visible;
 
                 return;
             }
+        }
+
+        private void calcularPorcentajes()
+        {
+            if(totA > 0)
+                porA = contA * 100 / totA;
+            if(totR > 0)
+                porR = contR * 100 / totR;
+        }
+        private void actualizarTextoAzul()
+        {
+            this.Azul.Text = "J1: " + porA + "%";
+            this.Azul2.Text = "(" + contA + "/" + totA + ")";
+        }
+
+        private void actualizarTextoRojo()
+        {
+            this.Rojo.Text = "J1: " + porR + "%";
+            this.Rojo2.Text = "(" + contR + "/" + totR + ")";
         }
 
         private void agregarRojo(int nivel)
@@ -89,10 +121,11 @@ namespace juego
             this.canvas.Children.Add(newEllipse);
             Canvas.SetTop(newEllipse, rnd.Next(110, 550));
             Canvas.SetLeft(newEllipse, rnd.Next(400, 1300));
-            this.Rojo.Text = contR + " / " + ++totR;
+            totR++;
+            calcularPorcentajes();
+            actualizarTextoRojo();
         }
-
-        
+                
         private void agregarAzul(int nivel)
         {
             newEllipse = pintarCirculo(Windows.UI.Colors.Blue, 100 / nivel, 100 / nivel);
@@ -107,7 +140,9 @@ namespace juego
             this.canvas.Children.Add(newEllipse);
             Canvas.SetTop(newEllipse, rnd.Next(10, 450));
             Canvas.SetLeft(newEllipse, rnd.Next(10, 900));
-            this.Azul.Text = contA + " / " + ++totA;
+            totA++;
+            calcularPorcentajes();
+            actualizarTextoAzul();
         }
 
         private Ellipse pintarCirculo(Windows.UI.Color color, int hei, int wid)
@@ -141,14 +176,18 @@ namespace juego
                     agregarAzul(2);
                     break;
                 case "AA":
-                    this.Azul.Text = ++contA + " / " + totA;
+                    contA++;
+                    calcularPorcentajes();
+                    actualizarTextoAzul();
                     break;
                 case "R":
                     agregarRojo(2);
                     agregarRojo(2);
                     break;
                 case "RR":
-                    this.Rojo.Text = ++contR + " / " + totR;
+                    contR++; 
+                    calcularPorcentajes();
+                    actualizarTextoRojo();
                     break;
             }
 
@@ -166,32 +205,42 @@ namespace juego
                 case "A":
                     agregarRojo(1);
                     agregarRojo(1);
-                    this.Azul.Text = contA + " / " + --totA;
+                    totA--;
+                    calcularPorcentajes();
+                    actualizarTextoAzul();
                     break;
                 case "R":
                     agregarAzul(1);
                     agregarAzul(1);
-                    this.Rojo.Text = contR + " / " + --totR;
+                    totR--;
+                    calcularPorcentajes();
+                    actualizarTextoRojo();
                     break;
                 case "AA":
                     agregarRojo(2);
                     agregarRojo(2);
-                    this.Azul.Text = contA + " / " + --totA;
+                    totA--;
+                    calcularPorcentajes();
+                    actualizarTextoAzul();
                     break;
                 case "RR":
                     agregarAzul(2);
                     agregarAzul(2);
-                    this.Rojo.Text = contR + " / " + --totR;
+                    totR--;
+                    calcularPorcentajes();
+                    actualizarTextoRojo();
                     break;
             }
         }
 
         private void starter_Click(object sender, RoutedEventArgs e)
         {
-            this.Azul.Text = "0 / 0";
-            this.Azul.Background = (SolidColorBrush)Resources["AzulBackground"];
-            this.Rojo.Text = "0 / 0";
-            this.Rojo.Background = (SolidColorBrush)Resources["RojoBackground"];
+            this.canvas.Children.Clear();
+            this.Azul.Text = "J1: 0%";
+            this.Azul2.Text = "(0/0)";
+            this.Rojo.Text = "J2: 0%";
+            this.Rojo2.Text = "(0/0)";
+            contA = contR = totA = totR = porA = porR = 0;
             myTimer.Start();
             startTime = DateTime.Now;
             this.starter.Visibility = Visibility.Collapsed;
